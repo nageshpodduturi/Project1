@@ -2,18 +2,18 @@
 
 
 
-describe ("Test Suite for Updating Profile and searching medicines for Diabetes",() => {
+describe ("Test Suite for Updating Profile",() => {
 
   let emailAddress = "nik+test@instantscripts.com.au";
   let password = "Nimbus2000!"
       
     it ("Updating user profile", () => {
-        // Loggin in to the site 
+        // Login in to the site 
         cy.visit("/");
         cy.get(".sign-in").click();
         cy.get(".login-email").type(emailAddress);
         cy.get(".login-password").type(password);
-        cy.get(".rounded-lg").contains("Log in").click({waitForAnimations:false});
+        cy.get(".rounded-lg").contains("Log in").click();
         cy.wait (10000);
     
         // Clicking on My profile from the drop down 
