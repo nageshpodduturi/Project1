@@ -57,7 +57,7 @@ describe ("Test Suite for Updating Profile",() => {
        cy.get('input[placeholder="____ _____ _"]').clear().type('3395 65357 1');
        // Submit again 
        cy.get("[type=submit]").click()
-      cy.wait(10000);
+      cy.wait(2000);
 
      // Validating data on the user profile 
      cy.get('label').contains("First name").next().should("contain", "Nik");

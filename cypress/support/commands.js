@@ -6,7 +6,7 @@ Cypress.Commands.add('userLogin', (emailAddress, password) => {
         cy.get(".login-email").type(emailAddress);
         cy.get(".login-password").type(password);
         cy.get(".rounded-lg").contains("Log in").click();
-        cy.wait (10000);
+        cy.wait (2000);
 })
 
 Cypress.Commands.add('clearUserProfileData', ()=>{
@@ -14,6 +14,8 @@ Cypress.Commands.add('clearUserProfileData', ()=>{
     cy.get('#user_signed_area').contains("Edit").click();
     // Clearing the data for DOB
     cy.get("[name=dob]").clear();
+    // Clearng the data for mobile number 
+    cy.get("[name=mobile]").clear();
     // Clearing the data forgender
     cy.get("[name=sex]").click();
     cy.contains("Female").click({force:true})
@@ -47,7 +49,7 @@ Cypress.Commands.add('clearUserProfileData', ()=>{
     cy.get(".actions").contains("Confirm").click({force:true});
      // Submit again 
     cy.get("[type=submit]").click();
-    cy.wait(10000);
+    cy.wait(2000);
 
 })
 Cypress.Commands.add('userLogOut',()=>{
